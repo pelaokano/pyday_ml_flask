@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clasificación de Texto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Clasificación de Texto</h1>
+        <form method="POST" action="/predict">
+            <div class="form-group">
+                <label for="text">Texto:</label>
+                <textarea class="form-control" id="text" name="text" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Predecir</button>
+        </form>
+        {% if prediction %}
+            <div class="mt-4">
+                <h3>Resultado de la clasificación:</h3>
+                <p>{{ prediction }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
